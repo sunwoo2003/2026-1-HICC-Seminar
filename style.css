@@ -1,0 +1,77 @@
+/* ==========================================
+   1. 공통 및 초기화 스타일 (Global)
+   : 모든 요소에 공통적으로 적용되는 기본값
+   ========================================== */
+   body { 
+    font-family: sans-serif; 
+    background: #f2f2f2; 
+    padding: 20px; 
+    margin: 0; 
+}
+
+button { 
+    padding: 8px 20px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    border-radius: 2px; 
+    border: 1px solid #ccc;
+    background: #fff;
+    transition: background 0.2s; 
+}
+
+/* 버튼 색상 구분 */
+.btn-main { background: #3b4890; color: #fff; border: 1px solid #2e3871; }
+.btn-main:hover { background: #2e3871; }
+.btn-sub { background: #fdfdfd; color: #666; border: 1px solid #ccc; }
+.btn-sub:hover { background: #f5f5f5; }
+
+
+/* ==========================================
+   2. 레이아웃 컨테이너 (Layout)
+   : 전체 화면의 틀을 잡는 역할
+   ========================================== */
+#app { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    background: #fff; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    min-height: 500px;
+}
+
+
+/* ==========================================
+   3. [목록 섹션] 스타일 (List Page)
+   ========================================== */
+.board-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+.board-table th { background: #eee; border-top: 2px solid #333; padding: 8px; border-bottom: 1px solid #ccc; }
+.board-table td { padding: 10px 8px; border-bottom: 1px solid #eee; text-align: center; }
+.board-table .col-title { text-align: left; cursor: pointer; color: #333; }
+.board-table .col-title:hover { text-decoration: underline; color: #222; }
+
+
+/* ==========================================
+   4. [상세 섹션] 스타일 (Detail Page)
+   ========================================== */
+.detail-header { border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px; }
+.detail-content { min-height: 200px; padding: 20px 0; line-height: 1.6; white-space: pre-wrap; } /* 엔터값 허용 추가 */
+.info { font-size: 12px; color: #888; margin-top: 5px; }
+
+
+/* ==========================================
+   5. [글쓰기 섹션] 스타일 (Write Page)
+   ========================================== */
+#writePage { padding: 20px 0; }
+.write-header { border-bottom: 2px solid #3b4890; padding-bottom: 10px; margin-bottom: 20px; }
+.write-header h3 { margin: 0; font-size: 1.2rem; color: #333; }
+
+.write-form { display: flex; flex-direction: column; gap: 12px; }
+.write-form input[type="text"], 
+.write-form textarea { 
+    width: 97%; padding: 12px; border: 1px solid #ddd; border-radius: 2px; font-size: 14px; outline: none; 
+}
+.write-form textarea { height: 350px; resize: none; }
+.write-form input:focus, 
+.write-form textarea:focus { border-color: #3b4890; }
+
+.write-btns { display: flex; justify-content: flex-end; gap: 8px; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; }
