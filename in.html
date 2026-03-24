@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HICC 갤러리</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <section id="listPage">
+            <h2>전체글 보기</h2>
+            <button onclick="showWritePage()" class="btn-main">글쓰기</button>
+            <table class="board-table">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>글쓴이</th>
+                    </tr>
+                </thead>
+                <tbody id="postList"></tbody>
+            </table>
+        </section>
+    
+        <section id="detailPage" style="display: none;">
+            <div class="detail-header">
+                <h3 id="viewTitle"></h3>
+                <div class="info">작성자: <span id="viewAuthor"></span></div>
+            </div>
+            <div id="viewContent" class="detail-content"></div>
+            <button onclick="showListPage()" class="btn-sub">목록으로</button>
+        </section>
+    
+        <section id="writePage" style="display: none;">
+            <div class="write-header"><h3>새 글 작성</h3></div>
+            <div class="write-form">
+                <input type="text" id="inputTitle" placeholder="제목">
+                <input type="text" id="inputAuthor" placeholder="작성자">
+                <textarea id="inputContent" placeholder="내용을 입력하세요"></textarea>
+                <div class="write-btns">
+                    <button onclick="showListPage()" class="btn-sub">취소</button>
+                    <button onclick="savePost()" class="btn-main">등록</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+    
+    
+</body>
+</html>
+
