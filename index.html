@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HICC 갤러리</title>
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
@@ -12,7 +12,7 @@
         <section id="listPage">
             <div class="board-header">
                 <h2>전체글 보기</h2>
-                <button type="button" class="btn-main">글쓰기</button>
+                <button onclick="showWritePage()" type="button" class="btn-main">글쓰기</button>
             </div>
             <table class="board-table">
                 <thead>
@@ -26,7 +26,7 @@
             </table>
         </section>
     
-        <section id="detailPage">
+        <section id="detailPage" display="none">
             <div class="detail-header">
                 <h3 id="viewTitle">게시글 제목 영역</h3>
                 <div class="info">작성자: <span id="viewAuthor">이름</span></div>
@@ -34,10 +34,10 @@
             <div id="viewContent" class="detail-content">
                 본문 내용
             </div>
-            <button type="button" class="btn-sub">목록으로</button>
+            <button onclick="showListPage()" type="button" class="btn-sub">목록으로</button>
         </section>
     
-        <section id="writePage">
+        <section id="writePage" display="none">
             <div class="write-header">
                 <h3>새 글 작성</h3>
             </div>
@@ -46,13 +46,13 @@
                 <input type="text" id="inputAuthor" placeholder="작성자">
                 <textarea id="inputContent" placeholder="내용을 입력하세요"></textarea>
                 <div class="write-btns">
-                    <button type="button" class="btn-sub">취소</button>
-                    <button type="button" class="btn-main">등록</button>
+                    <button onclick="showListPage()" type="button" class="btn-sub">취소</button>
+                    <button onclick="savePost()" type="button" class="btn-main">등록</button>
                 </div>
             </div>
         </section>
         
     </div>
-    
+    <script src="script.js"></script>
     </body>
 </html>
