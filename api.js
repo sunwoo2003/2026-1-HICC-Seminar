@@ -11,7 +11,9 @@ const API_KEY = '여기에_발급받은_API_키를_입력하세요';
    ========================================== */
 async function fetchNews() {
     try {
-        // 한국(kr)의 최신 헤드라인 뉴스를 가져옵니다.
+        // 뉴스를 가져옵니다.
+        // https://newsapi.org/v2/everything?q=IT&language=ko&sortBy=publishedAt&apiKey=
+        // https://newsapi.org/v2/everything?q=개발자&language=ko&apiKey=
         const response = await fetch(`https://newsapi.org/v2/everything?q=tesla&from=2026-02-28&sortBy=publishedAt&apiKey=${API_KEY}`);
         const data = await response.json();
 
