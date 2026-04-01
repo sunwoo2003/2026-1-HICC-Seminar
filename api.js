@@ -6,7 +6,7 @@
 
    // Gnews API 설정 (본인의 API KEY를 입력하세요)
    const API_KEY = 'YOUR_GNEWS_API_KEY'; 
-   const API_URL = `https://gnews.io/api/v4/top-headlines?category=technology&lang=ko&country=kr&max=12&apikey=${API_KEY}`;
+   const API_URL = `https://gnews.io/api/v4/top-headlines?category=technology&lang=ko&country=kr&max=10&apikey=${API_KEY}`;
    
    /* ==========================================
       2. 유틸리티 함수 (Utilities)
