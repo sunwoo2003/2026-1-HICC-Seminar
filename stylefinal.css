@@ -1,0 +1,136 @@
+/* ==========================================
+   1. 공통 및 초기화 스타일 (Global)
+   ========================================== */
+   * {
+    box-sizing: border-box; /* 테두리와 여백을 높이에 포함시켜 크기 계산을 정확하게 함 */
+}
+
+body { 
+    font-family: 'Pretendard', sans-serif; 
+    background: #f2f2f2; 
+    padding: 20px; 
+    margin: 0; 
+    color: #333;
+}
+
+/* [중요] 모든 버튼의 높이를 38px로 통일 */
+button { 
+    height: 38px;
+    padding: 0 20px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    border: 1px solid #ccc;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s; 
+}
+
+.btn-main { background: #3b4890; color: #fff; border: none; }
+.btn-main:hover { background: #2e3871; }
+.btn-sub { background: #fdfdfd; color: #666; border: 1px solid #ccc; }
+.btn-sub:hover { background: #f5f5f5; }
+.btn-danger { color: #d9534f; border-color: #dca7a7; }
+
+#app { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    background: #fff; 
+    padding: 30px; 
+    border: 1px solid #ddd; 
+    min-height: 600px;
+    border-radius: 8px;
+}
+
+/* ==========================================
+   2. 목록 헤더 레이아웃 (Board Header)
+   ========================================== */
+.board-header { 
+    display: flex; 
+    justify-content: space-between; /* 왼쪽(제목/버튼)과 오른쪽(유저정보)을 양 끝으로 밀어냄 */
+    align-items: flex-end;         /* 바닥 라인을 맞춰서 버튼 높이가 같아 보이게 함[cite: 5] */
+    margin-bottom: 25px; 
+}
+
+/* 왼쪽 그룹: 제목 아래에 글쓰기 버튼 배치[cite: 5] */
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 제목과 글쓰기 버튼 사이의 간격[cite: 5] */
+}
+
+.header-left h2 { 
+    margin: 0; 
+    font-size: 24px; 
+    line-height: 1; 
+}
+
+/* 오른쪽 그룹: 사용자 정보와 로그아웃 버튼[cite: 5] */
+.header-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px;
+    height: 38px; /* 왼쪽 버튼과 수평을 맞추기 위한 높이 지정[cite: 5] */
+}
+
+#userInfo { 
+    font-size: 14px; 
+    font-weight: bold; 
+    color: #555;
+    line-height: 38px; /* 텍스트를 버튼 높이 중앙에 배치[cite: 5] */
+}
+
+/* ==========================================
+   3. 게시판 목록 테이블 (Board Table)
+   ========================================== */
+.board-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+.board-table th { background: #eee; border-top: 2px solid #333; padding: 12px; border-bottom: 1px solid #ccc; }
+.board-table td { padding: 12px 8px; border-bottom: 1px solid #eee; text-align: center; }
+.board-table .col-title { text-align: left; cursor: pointer; color: #333; }
+.board-table .col-title:hover { text-decoration: underline; }
+
+/* ==========================================
+   4. 상세 페이지 및 댓글 (Detail & Comments)
+   ========================================== */
+.detail-header { border-bottom: 2px solid #333; padding-bottom: 15px; margin-bottom: 20px; position: relative; }
+.detail-content { 
+    min-height: 250px; 
+    padding: 20px 0; 
+    line-height: 1.7; 
+    white-space: pre-wrap; /* 사용자가 입력한 줄바꿈(엔터)을 그대로 보여줌[cite: 5] */
+    font-size: 15px;
+}
+
+.action-btns { position: absolute; right: 0; bottom: 15px; display: flex; gap: 8px; }
+.btn-small { height: 30px; padding: 0 12px; font-size: 12px; }
+
+.comment-section { margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; }
+.comment-list { list-style: none; padding: 0; margin-bottom: 20px; }
+.comment-list li { padding: 12px 0; border-bottom: 1px dashed #eee; display: flex; flex-direction: column; gap: 5px; }
+.comment-text { font-size: 14px; color: #444; }
+
+.comment-form { display: flex; gap: 10px; }
+.comment-form input { 
+    flex: 1; 
+    height: 38px; 
+    padding: 0 12px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    outline: none; 
+}
+
+/* ==========================================
+   5. 글쓰기/수정 폼 (Write Form)
+   ========================================== */
+.write-form { display: flex; flex-direction: column; gap: 15px; }
+.write-form input, .write-form textarea { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    font-size: 14px; 
+}
+.write-form textarea { height: 350px; resize: none; line-height: 1.6; }
+.write-btns { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }

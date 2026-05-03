@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HICC 갤러리</title>
+    <link rel="stylesheet" href="stylefinal.css">
+</head>
+<body>
+    <div id="app">
+        <!-- [1. 목록 섹션] -->
+        <section id="listPage">
+            <div class="board-header">
+                <!-- 왼쪽: 제목과 글쓰기 버튼을 세로로 배치[cite: 4] -->
+                <div class="header-left">
+                    <h2>전체글 보기</h2>
+                    <button onclick="showWritePage()" type="button" class="btn-main">글쓰기</button>
+                </div>
+                
+                <!-- 오른쪽: 사용자 정보와 로그아웃 버튼[cite: 4] -->
+                <div class="header-right">
+                    <span id="userInfo"></span>
+                    <button id="authBtn" onclick="toggleAuth()" type="button" class="btn-sub">구글 로그인</button>
+                </div>
+            </div>
+            
+            <table class="board-table">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>글쓴이</th>
+                    </tr>
+                </thead>
+                <tbody id="postList"></tbody>
+            </table>
+        </section>
+        
+        <!-- ... 상세 섹션 및 글쓰기 섹션은 이전과 동일[cite: 4] ... -->
+        <section id="detailPage" style="display:none;">
+            <div class="detail-header">
+                <h3 id="viewTitle">게시글 제목 영역</h3>
+                <div class="info">작성자: <span id="viewAuthor">이름</span></div>
+                <div id="postActionBtns" class="action-btns" style="display: none;">
+                    <button onclick="editPost()" type="button" class="btn-sub btn-small">수정</button>
+                    <button onclick="deletePost()" type="button" class="btn-sub btn-small btn-danger">삭제</button>
+                </div>
+            </div>
+            <div id="viewContent" class="detail-content">본문 내용</div>
+            <div class="detail-footer">
+                <button onclick="showListPage()" type="button" class="btn-sub">목록으로</button>
+            </div>
+            <div class="comment-section">
+                <h4>댓글</h4>
+                <ul id="commentList" class="comment-list"></ul>
+                <div class="comment-form">
+                    <input type="text" id="inputComment" placeholder="댓글을 남겨보세요.">
+                    <button onclick="saveComment()" type="button" class="btn-main">등록</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="writePage" style="display:none;">
+            <div class="write-header"><h3 id="writePageTitle">새 글 작성</h3></div>
+            <div class="write-form">
+                <input type="text" id="inputTitle" placeholder="제목">
+                <input type="text" id="inputAuthor" placeholder="작성자">
+                <textarea id="inputContent" placeholder="내용을 입력하세요"></textarea>
+                <div class="write-btns">
+                    <button onclick="showListPage()" type="button" class="btn-sub">취소</button>
+                    <button id="submitBtn" onclick="savePost()" type="button" class="btn-main">등록하기</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="scriptfinal.js"></script>
+</body>
+</html>
