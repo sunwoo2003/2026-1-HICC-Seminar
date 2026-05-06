@@ -8,7 +8,7 @@
    let currentUser = null; 
    let currentViewPostId = null; 
    
-   // [보안 추가] HTML 특수 문자를 치환하여 스크립트 실행 방지
+   //  HTML 특수 문자를 치환하여 스크립트 실행 방지
    function escapeHTML(text) {
        if (!text) return "";
        return text
